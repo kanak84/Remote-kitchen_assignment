@@ -1,1 +1,22 @@
+{props.cart && props.cart.total_unique_items > 0 ? (
+    <>
+        //This is what we will display if there are any items/products 
+        //in our cart
+    </>
+) 
+:
+(
+    // This is our Modal when there are ZERO items/products in our cart
 
+    <>
+        <Modal.Header>Seities Apparel Cart</Modal.Header>
+        <Modal.Content image>
+            <Image wrapped size='huge' src={cartImg} />
+            <Modal.Description>
+                <Header>Your Cart is currently Empty</Header>
+                <p>
+                    It would make you very happy if you added an item to the cart
+                </p>
+            </Modal.Description>
+        </Modal.Content>
+    </>
