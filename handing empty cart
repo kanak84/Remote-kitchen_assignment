@@ -1,1 +1,22 @@
+const emptyCart = () => {
+    commerce.cart.empty()
+        .then(res => {
+            setCart(null)
+        })
+}
+
+//Passing function as prop App -> Nav
+<Nav cart={cart} emptyCart={emptyCart} />
+
+
+// *** Nav.js *** Passing function as prop App -> Nav -> CartModal
+<CartModal cart={props.cart} emptyCart={props.emptyCart} />
+// *** CartModal.js *** Adding function to handle click
+<Button  
+    basic 
+    negative  
+    floated='left' 
+    onClick={props.emptyCart}
+>
+
 
