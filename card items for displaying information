@@ -1,1 +1,16 @@
+return (
+    // *** CartItems.js ***
 
+    <>
+        <Item.Image size='tiny' src={props.item.media.source} />
+        <Item.Content verticalAlign='middle'>
+            <Item.Header>{props.item.name}</Item.Header>
+            <Item.Meta>
+                <span>{props.item.variants[0].option_name}</span>
+            </Item.Meta>
+            <Item.Extra className='item-total'>
+                <Header floated='right'>${props.item.line_total.formatted_with_symbol}</Header>
+            </Item.Extra>
+        </Item.Content>
+    </>
+);
