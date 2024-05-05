@@ -1,1 +1,22 @@
+{props.cart && props.cart.total_unique_items > 0 ? (
+    <>
+        <Item.Group divided>
+            {props.cart.line_items.map(item => (
+                <Item key={item.id}>
+                    <CartItems item={item}/>
+                </Item>
+            ))}
+        </Item.Group>
 
+        <Modal.Actions className='model-bottom'>
+            <Button  
+                basic 
+                negative  
+                floated='left' 
+            >
+                Empty Cart
+            </Button>
+            <Header floated='right'>{props.cart.subtotal.formatted_with_symbol}</Header>
+        </Modal.Actions>
+    </>
+)
