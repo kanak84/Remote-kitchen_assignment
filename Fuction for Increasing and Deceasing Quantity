@@ -1,1 +1,49 @@
+return (
+    <>
+        <Item.Image size='tiny' src={props.item.media.source} />
+        <Item.Content verticalAlign='middle'>
+            <Item.Header>{props.item.name}</Item.Header>
+            <Item.Meta>
+                <span>{props.item.variants[0].option_name}</span>
+            </Item.Meta>
+
+            // New Added Elements
+            <div className='quanity-group'>
+                <Button
+                    negative 
+                    className='quan-buttons' 
+                > 
+                    <Icon name='minus' /> 
+                </Button>
+                <Input 
+                    className='input-quanity'
+                    value={props.item.quantity} 
+                />
+                <Button
+                    positive 
+                    className='quan-buttons'
+                > 
+                    <Icon name='plus' /> 
+                </Button>
+            </div>
+            <Item.Extra className='item-total'>
+                <Header floated='right'>${props.item.line_total.formatted_with_symbol}</Header>
+            </Item.Extra>
+        </Item.Content>
+    </>
+);
+
+// Input  values
+
+<Input 
+    className='input-quanity'
+    value={props.item.quantity} 
+/>
+
+// total  amount based quantity
+
+<Item.Extra className='item-total'>
+    <Header floated='right'>${props.item.line_total.formatted_with_symbol}</Header>
+</Item.Extra>
+
 
