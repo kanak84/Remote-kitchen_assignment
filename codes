@@ -33,3 +33,11 @@ useEffect(() => {
         />
     </Card.Content>
 </Card>
+
+
+
+const [variantInfo, setVariantInfo] = useState()
+
+const handleSize = (e, {value}) => {
+    setVariantInfo({[props.product.variants[0].id]: value})
+}
