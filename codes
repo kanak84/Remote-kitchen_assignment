@@ -41,3 +41,18 @@ const [variantInfo, setVariantInfo] = useState()
 const handleSize = (e, {value}) => {
     setVariantInfo({[props.product.variants[0].id]: value})
 }
+
+
+
+
+const addToCart = (productId, variantInfo) => {
+
+    if(variantInfo) {
+        commerce.cart.add(productId, 1, variantInfo)
+            .then(res => {
+                setCart(res.cart)
+            })
+    } else {
+        window.alert('Please Select a Shirt Size')
+    }
+}
