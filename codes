@@ -53,7 +53,7 @@ const addToCart = (productId, variantInfo) => {
                 setCart(res.cart)
             })
     } else {
-        window.alert('Please Select a Shirt Size')
+        window.alert('Please Select Food Item')
     }
 }
 
