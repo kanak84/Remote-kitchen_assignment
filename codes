@@ -56,3 +56,12 @@ const addToCart = (productId, variantInfo) => {
         window.alert('Please Select a Shirt Size')
     }
 }
+
+
+
+useEffect(() => {
+    commerce.cart.retrieve()
+        .then(res => {
+            setCart(res)
+        })
+},[])
